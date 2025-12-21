@@ -4,9 +4,9 @@
  * Placeholder form - will be replaced with Contact Form 7
  */
 ?>
-<section id="contact" class="py-24 bg-primary/[0.03]">
+<section id="contact" class="py-16 lg:py-24 bg-primary/[0.03]">
   <div class="max-w-6xl mx-auto px-4">
-    <div class="grid lg:grid-cols-2 gap-16 items-start">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
       <!-- Left Column - Info -->
       <div class="contact-info">
         <span class="inline-flex items-center mb-4 text-[13px] text-primary font-medium tracking-wide">

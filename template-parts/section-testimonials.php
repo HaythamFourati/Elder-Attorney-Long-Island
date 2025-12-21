@@ -62,10 +62,10 @@ $testimonials = [
   
 ];
 ?>
-<section id="testimonials" class="py-24">
+<section id="testimonials" class="py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <!-- Section Header -->
-    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 lg:gap-6 mb-10 lg:mb-14">
       <div class="max-w-xl">
         <span class="inline-flex items-center mb-4 text-[13px] text-primary font-medium tracking-wide">
           <span class="w-8 h-px bg-primary/40 mr-3"></span>
@@ -81,7 +81,7 @@ $testimonials = [
     </div>
 
     <!-- Testimonials Grid -->
-    <div class="grid md:grid-cols-3 gap-6">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
       <?php foreach ($testimonials as $index => $testimonial): ?>
       <article class="testimonial-card group relative p-6 rounded-2xl bg-white border border-border/50 hover:border-primary/20 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
         <!-- Quote Icon -->

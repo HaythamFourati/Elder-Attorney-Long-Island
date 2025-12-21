@@ -42,10 +42,10 @@ $practice_areas = [
   ]
 ];
 ?>
-<section id="practice-areas" class="py-24">
+<section id="practice-areas" class="py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <!-- Section Header -->
-    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 lg:gap-6 mb-10 lg:mb-14">
       <div class="max-w-xl">
         <span class="inline-flex items-center mb-4 text-[13px] text-primary font-medium tracking-wide">
           <span class="w-8 h-px bg-primary/40 mr-3"></span>

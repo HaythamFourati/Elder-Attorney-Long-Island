@@ -111,14 +111,64 @@ function Enhancer() {
   // Mobile menu toggle
   useEffect(() => {
     const toggleBtn = document.getElementById('mobile-menu-toggle')
-    if (!toggleBtn) return
+    const menuPanel = document.getElementById('mobile-menu-panel')
+    const iconOpen = document.getElementById('mobile-menu-icon-open')
+    const iconClose = document.getElementById('mobile-menu-icon-close')
+    const servicesToggle = document.getElementById('mobile-services-toggle')
+    const servicesMenu = document.getElementById('mobile-services-menu')
+    
+    if (!toggleBtn || !menuPanel) return
 
     const handleToggle = () => {
-      setMobileMenuOpen(prev => !prev)
+      const isOpen = !menuPanel.classList.contains('hidden')
+      
+      if (isOpen) {
+        // Close menu
+        menuPanel.classList.add('hidden')
+        iconOpen?.classList.remove('hidden')
+        iconClose?.classList.add('hidden')
+      } else {
+        // Open menu
+        menuPanel.classList.remove('hidden')
+        iconOpen?.classList.add('hidden')
+        iconClose?.classList.remove('hidden')
+      }
+      
+      setMobileMenuOpen(!isOpen)
     }
 
+    const handleServicesToggle = () => {
+      if (!servicesMenu) return
+      const isOpen = !servicesMenu.classList.contains('hidden')
+      
+      if (isOpen) {
+        servicesMenu.classList.add('hidden')
+        servicesToggle?.querySelector('svg')?.classList.remove('rotate-180')
+      } else {
+        servicesMenu.classList.remove('hidden')
+        servicesToggle?.querySelector('svg')?.classList.add('rotate-180')
+      }
+    }
+
+    // Close menu when clicking a link
+    const handleLinkClick = () => {
+      menuPanel.classList.add('hidden')
+      iconOpen?.classList.remove('hidden')
+      iconClose?.classList.add('hidden')
+      setMobileMenuOpen(false)
+    }
+
+    const menuLinks = menuPanel.querySelectorAll('a')
+    menuLinks.forEach(link => link.addEventListener('click', handleLinkClick))
+
     toggleBtn.addEventListener('click', handleToggle)
-    return () => toggleBtn.removeEventListener('click', handleToggle)
+    servicesToggle?.addEventListener('click', handleServicesToggle)
+    
+    return () => {
+      toggleBtn.removeEventListener('click', handleToggle)
+      servicesToggle?.removeEventListener('click', handleServicesToggle)
+      menuLinks.forEach(link => link.removeEventListener('click', handleLinkClick))
+    }
   }, [])
 
 

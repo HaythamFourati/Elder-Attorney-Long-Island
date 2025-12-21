@@ -3,9 +3,9 @@
  * About Section - Clean 2025 Modern Design
  */
 ?>
-<section id="about" class="py-24">
+<section id="about" class="py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
-    <div class="grid lg:grid-cols-2 gap-16 items-center">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
       <!-- Text Content -->
       <div class="showcase-text-1">
         <span class="inline-flex items-center mb-4 text-[13px] text-primary font-medium tracking-wide">
@@ -48,11 +48,11 @@
 </section>
 
 <!-- Meet Our Attorney Section -->
-<section class="py-24 bg-muted/30">
+<section class="py-16 lg:py-24 bg-muted/30">
   <div class="max-w-6xl mx-auto px-4">
-    <div class="grid lg:grid-cols-2 gap-16 items-center">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
       <!-- Image -->
-      <div class="showcase-image-2 relative lg:order-1">
+      <div class="showcase-image-2 relative order-1 lg:order-1">
         <div class="relative rounded-3xl overflow-hidden aspect-[3/4] max-w-md mx-auto lg:mx-0">
           <div class="image-slices-2 absolute inset-0 z-10 flex">
             <div class="slice-1 w-1/3 h-full bg-muted/30"></div>

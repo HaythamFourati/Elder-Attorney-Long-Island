@@ -68,7 +68,7 @@
     </div>
 
     <!-- Mobile Navigation -->
-    <div id="mobile-nav-root" class="relative z-50 mx-auto flex w-full flex-col items-center justify-between bg-white/80 backdrop-blur-md rounded-2xl border border-primary/10 px-4 py-3 lg:hidden">
+    <div id="mobile-nav-root" class="relative z-50 mx-auto flex w-full flex-col bg-white/80 backdrop-blur-md rounded-2xl border border-primary/10 px-4 py-3 lg:hidden">
       <div class="flex w-full flex-row items-center justify-between">
         <a href="<?php echo home_url(); ?>" class="flex items-center gap-2.5">
           <div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
@@ -77,10 +77,54 @@
           <span class="font-semibold text-sm text-foreground tracking-tight">Elder Attorney</span>
         </a>
         <button id="mobile-menu-toggle" class="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-primary/5 transition-colors" aria-label="Toggle menu">
-          <svg class="w-5 h-5 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg id="mobile-menu-icon-open" class="w-5 h-5 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
+          <svg id="mobile-menu-icon-close" class="w-5 h-5 text-foreground hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
         </button>
+      </div>
+      
+      <!-- Mobile Menu Panel -->
+      <div id="mobile-menu-panel" class="hidden w-full pt-4 pb-2">
+        <div class="flex flex-col gap-1">
+          <!-- Services Accordion -->
+          <div class="mobile-accordion">
+            <button id="mobile-services-toggle" class="w-full flex items-center justify-between px-3 py-2.5 text-[14px] text-foreground font-medium rounded-lg hover:bg-primary/5 transition-colors">
+              Services
+              <svg class="w-4 h-4 text-muted-foreground transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div id="mobile-services-menu" class="hidden pl-3 mt-1 space-y-1">
+              <a href="<?php echo home_url('/long-term-care'); ?>" class="block px-3 py-2 text-[13px] text-foreground/70 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors">Long-Term Care</a>
+              <a href="<?php echo home_url('/elder-law'); ?>" class="block px-3 py-2 text-[13px] text-foreground/70 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors">Elder Law</a>
+              <a href="<?php echo home_url('/estate-planning'); ?>" class="block px-3 py-2 text-[13px] text-foreground/70 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors">Estate Planning</a>
+              <a href="<?php echo home_url('/medicaid-planning'); ?>" class="block px-3 py-2 text-[13px] text-foreground/70 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors">Medicaid Planning</a>
+              <a href="<?php echo home_url('/asset-protection'); ?>" class="block px-3 py-2 text-[13px] text-foreground/70 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors">Asset Protection</a>
+              <a href="<?php echo home_url('/probate'); ?>" class="block px-3 py-2 text-[13px] text-foreground/70 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors">Probate</a>
+            </div>
+          </div>
+          
+          <a href="<?php echo home_url('/about'); ?>" class="px-3 py-2.5 text-[14px] text-foreground font-medium rounded-lg hover:bg-primary/5 transition-colors">About</a>
+          <a href="<?php echo home_url('/blog'); ?>" class="px-3 py-2.5 text-[14px] text-foreground font-medium rounded-lg hover:bg-primary/5 transition-colors">Blog</a>
+          <a href="<?php echo home_url('/#testimonials'); ?>" class="px-3 py-2.5 text-[14px] text-foreground font-medium rounded-lg hover:bg-primary/5 transition-colors">Reviews</a>
+          <a href="#contact" class="px-3 py-2.5 text-[14px] text-foreground font-medium rounded-lg hover:bg-primary/5 transition-colors">Contact</a>
+        </div>
+        
+        <!-- Mobile CTA -->
+        <div class="mt-4 pt-4 border-t border-border/50 space-y-3">
+          <a href="tel:<?php echo esc_attr(SITE_PHONE_LINK); ?>" class="flex items-center justify-center gap-2 px-4 py-2.5 text-[14px] text-foreground font-medium rounded-xl border border-border hover:bg-primary/5 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+            <?php echo esc_html(SITE_PHONE); ?>
+          </a>
+          <a href="#contact" class="flex items-center justify-center gap-2 px-4 py-3 text-[14px] text-white font-medium rounded-xl bg-primary hover:bg-primary/90 transition-colors">
+            Free Consultation
+          </a>
+        </div>
       </div>
     </div>
   </nav>

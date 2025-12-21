@@ -35,30 +35,30 @@
         </div>
         
         <!-- Trust indicators -->
-        <div class="flex items-center gap-8 pt-8 border-t border-border/50">
+        <div class="flex flex-wrap items-center gap-4 sm:gap-8 pt-8 border-t border-border/50">
           <div class="flex flex-col">
-            <span class="text-2xl font-semibold text-foreground">30+</span>
-            <span class="text-[13px] text-muted-foreground">Years Experience</span>
+            <span class="text-xl sm:text-2xl font-semibold text-foreground">30+</span>
+            <span class="text-[12px] sm:text-[13px] text-muted-foreground">Years Experience</span>
           </div>
-          <div class="w-px h-10 bg-border"></div>
+          <div class="w-px h-8 sm:h-10 bg-border"></div>
           <div class="flex flex-col">
             <div class="flex items-center gap-1">
-              <span class="text-2xl font-semibold text-foreground">5.0</span>
-              <svg class="w-5 h-5 fill-amber-400 text-amber-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <span class="text-xl sm:text-2xl font-semibold text-foreground">5.0</span>
+              <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-amber-400 text-amber-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             </div>
-            <span class="text-[13px] text-muted-foreground">Google Rating</span>
+            <span class="text-[12px] sm:text-[13px] text-muted-foreground">Google Rating</span>
           </div>
-          <div class="w-px h-10 bg-border"></div>
+          <div class="w-px h-8 sm:h-10 bg-border"></div>
           <div class="flex flex-col">
-            <span class="text-2xl font-semibold text-foreground">1000+</span>
-            <span class="text-[13px] text-muted-foreground">Families Helped</span>
+            <span class="text-xl sm:text-2xl font-semibold text-foreground">1000+</span>
+            <span class="text-[12px] sm:text-[13px] text-muted-foreground">Families Helped</span>
           </div>
         </div>
       </div>
       
       <!-- Hero Image -->
-      <div class="relative hidden lg:block">
-        <div class="hero-image relative rounded-3xl overflow-hidden aspect-[4/4.75]">
+      <div class="relative mt-10 lg:mt-0">
+        <div class="hero-image relative rounded-2xl lg:rounded-3xl overflow-hidden aspect-[4/3] lg:aspect-[4/4.75]">
           <div class="hero-image-slices absolute inset-0 z-10 flex">
             <div class="w-1/3 h-full bg-background"></div>
             <div class="w-1/3 h-full bg-background"></div>
