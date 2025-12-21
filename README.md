@@ -10,7 +10,6 @@ A modern, high-performance WordPress theme built for Elder Attorney Long Island.
 | **React** | Client-side enhancements via `Enhancer.jsx` |
 | **Tailwind CSS v4** | Utility-first styling with custom design tokens |
 | **GSAP + ScrollTrigger** | Scroll-linked animations (desktop only) |
-| **Lenis** | Smooth scroll (desktop only) |
 | **@wordpress/scripts** | JS bundling (webpack under the hood) |
 | **BrowserSync** | Live reload during development |
 
@@ -121,16 +120,16 @@ This runs three processes in parallel:
 ## Performance Optimizations
 
 ### Mobile (< 1024px)
-- ❌ Lenis smooth scroll disabled
 - ❌ ScrollTrigger animations disabled
 - ✅ Simple fade-in animations only
 - ✅ All content visible immediately
+- ✅ Native browser scroll (no JS overhead)
 
 ### Desktop
-- ✅ Lenis smooth scroll
+- ✅ Native browser scroll (lightweight, universal)
 - ✅ ScrollTrigger.batch() for card animations
 - ✅ One-time triggers (not continuous scrub)
-- ✅ `will-change` CSS hints for GPU acceleration
+- ✅ Deferred JS loading
 
 ### Accessibility
 - ✅ `prefers-reduced-motion` respected

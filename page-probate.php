@@ -14,15 +14,16 @@ get_header(); ?>
     <div class="max-w-6xl mx-auto px-4 relative z-10">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
         <div class="service-hero-content">
-          <a href="<?php echo home_url(); ?>/#practice-areas" class="inline-flex items-center gap-2 mb-6 text-[13px] text-primary font-medium hover:text-primary/80 transition-colors">
-            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
-            Back to Services
-          </a>
-          
-          <span class="inline-flex items-center mb-4 text-[13px] text-primary font-medium tracking-wide">
-            <span class="w-8 h-px bg-primary/40 mr-3"></span>
-            Practice Area
-          </span>
+          <div class="flex items-center gap-6 mb-6">
+            <a href="<?php echo home_url(); ?>/#practice-areas" class="inline-flex items-center gap-2 text-[13px] text-primary font-medium hover:text-primary/80 transition-colors">
+              <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+              Back to Services
+            </a>
+            <span class="inline-flex items-center text-[13px] text-primary font-medium tracking-wide">
+              <span class="w-8 h-px bg-primary/40 mr-3"></span>
+              Practice Area
+            </span>
+          </div>
           
           <h1 class="service-heading text-4xl md:text-5xl lg:text-[56px] font-semibold tracking-tight mb-6 leading-[1.1] text-foreground">
             Probate & Estate Administration
@@ -37,9 +38,9 @@ get_header(); ?>
               Schedule Free Consultation
               <svg class="w-4 h-4 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
-            <a href="tel:888-851-2272" class="inline-flex items-center justify-center px-6 py-3.5 rounded-xl border border-border text-foreground/80 text-[15px] font-medium hover:bg-muted/50 hover:border-primary/20 transition-all duration-200">
+            <a href="tel:<?php echo esc_attr(SITE_PHONE_LINK); ?>" class="inline-flex items-center justify-center px-6 py-3.5 rounded-xl border border-border text-foreground/80 text-[15px] font-medium hover:bg-muted/50 hover:border-primary/20 transition-all duration-200">
               <svg class="w-4 h-4 mr-2 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              888-851-2272
+              <?php echo esc_html(SITE_PHONE); ?>
             </a>
           </div>
         </div>
@@ -220,13 +221,13 @@ get_header(); ?>
             <div class="bg-muted/30 rounded-2xl p-6">
               <h3 class="text-[15px] font-semibold text-foreground mb-4">Questions?</h3>
               <div class="space-y-3">
-                <a href="tel:888-851-2272" class="flex items-center gap-3 text-[14px] text-foreground hover:text-primary transition-colors">
+                <a href="tel:<?php echo esc_attr(SITE_PHONE_LINK); ?>" class="flex items-center gap-3 text-[14px] text-foreground hover:text-primary transition-colors">
                   <svg class="w-4 h-4 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                  888-851-2272
+                  <?php echo esc_html(SITE_PHONE); ?>
                 </a>
-                <a href="mailto:info@elderattorneylongisland.com" class="flex items-center gap-3 text-[14px] text-muted-foreground hover:text-primary transition-colors">
+                <a href="mailto:<?php echo esc_attr(SITE_EMAIL); ?>" class="flex items-center gap-3 text-[14px] text-muted-foreground hover:text-primary transition-colors">
                   <svg class="w-4 h-4 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                  info@elderattorneylongisland.com
+                  <?php echo esc_html(SITE_EMAIL); ?>
                 </a>
               </div>
             </div>
@@ -235,6 +236,8 @@ get_header(); ?>
       </div>
     </div>
   </section>
+
+  <?php get_template_part('template-parts/section-page-content'); ?>
 
   <?php get_template_part('template-parts/section-contact'); ?>
   <?php get_template_part('template-parts/footer-site'); ?>

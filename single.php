@@ -15,20 +15,21 @@ get_header(); ?>
     <header class="pt-8 pb-12 lg:pt-12 lg:pb-16">
       <div class="max-w-3xl mx-auto px-4">
         <div class="single-post-header">
-          <!-- Back Link -->
-          <a href="<?php echo get_permalink(get_option('page_for_posts')); ?>" class="inline-flex items-center gap-2 mb-6 text-[13px] text-primary font-medium hover:text-primary/80 transition-colors">
-            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
-            Back to Blog
-          </a>
-
-          <!-- Category -->
-          <?php 
-          $categories = get_the_category();
-          if ($categories) : ?>
-            <a href="<?php echo esc_url(get_category_link($categories[0]->term_id)); ?>" class="inline-block text-[11px] font-medium text-primary uppercase tracking-wider mb-4 hover:text-primary/80 transition-colors">
-              <?php echo esc_html($categories[0]->name); ?>
+          <!-- Back Link & Category -->
+          <div class="flex items-center gap-6 mb-6">
+            <a href="<?php echo get_permalink(get_option('page_for_posts')); ?>" class="inline-flex items-center gap-2 text-[13px] text-primary font-medium hover:text-primary/80 transition-colors">
+              <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+              Back to Blog
             </a>
-          <?php endif; ?>
+            <?php 
+            $categories = get_the_category();
+            if ($categories) : ?>
+              <span class="inline-flex items-center text-[13px] text-primary font-medium tracking-wide">
+                <span class="w-8 h-px bg-primary/40 mr-3"></span>
+                <?php echo esc_html($categories[0]->name); ?>
+              </span>
+            <?php endif; ?>
+          </div>
 
           <!-- Title -->
           <h1 class="text-3xl md:text-4xl lg:text-[44px] font-semibold tracking-tight text-foreground leading-[1.15] mb-6">
@@ -62,14 +63,22 @@ get_header(); ?>
     <!-- Featured Image -->
     <?php if (has_post_thumbnail()) : ?>
       <div class="max-w-4xl mx-auto px-4 mb-12">
-        <div class="single-post-image rounded-2xl overflow-hidden aspect-[2/1]">
-          <?php the_post_thumbnail('full', ['class' => 'w-full h-full object-cover']); ?>
+        <div class="single-post-image rounded-2xl overflow-hidden">
+          <?php the_post_thumbnail('full', ['class' => 'w-full h-auto']); ?>
         </div>
       </div>
     <?php endif; ?>
 
     <!-- Content -->
     <div class="max-w-3xl mx-auto px-4 pb-16">
+      <?php 
+      // Trigger content filter to extract headings
+      $content = apply_filters('the_content', get_the_content());
+      
+      // Render Table of Contents if headings exist
+      echo render_table_of_contents();
+      ?>
+      
       <div class="single-post-content prose prose-lg max-w-none
         prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-foreground
         prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
@@ -84,7 +93,7 @@ get_header(); ?>
         prose-code:text-primary prose-code:bg-primary/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-[14px]
         prose-pre:bg-foreground prose-pre:text-white prose-pre:rounded-xl
       ">
-        <?php the_content(); ?>
+        <?php echo $content; ?>
       </div>
 
       <!-- Tags -->

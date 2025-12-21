@@ -52,14 +52,14 @@
         </div>
         <a href="<?php echo home_url('/about'); ?>" class="relative px-4 py-2 text-[13px] text-foreground/70 hover:text-primary font-medium transition-colors duration-200 rounded-lg hover:bg-primary/5">About</a>
         <a href="<?php echo home_url('/blog'); ?>" class="relative px-4 py-2 text-[13px] text-foreground/70 hover:text-primary font-medium transition-colors duration-200 rounded-lg hover:bg-primary/5">Blog</a>
-        <a href="#testimonials" class="relative px-4 py-2 text-[13px] text-foreground/70 hover:text-primary font-medium transition-colors duration-200 rounded-lg hover:bg-primary/5">Reviews</a>
+        <a href="<?php echo home_url('/#testimonials'); ?>" class="relative px-4 py-2 text-[13px] text-foreground/70 hover:text-primary font-medium transition-colors duration-200 rounded-lg hover:bg-primary/5">Reviews</a>
         <a href="#contact" class="relative px-4 py-2 text-[13px] text-foreground/70 hover:text-primary font-medium transition-colors duration-200 rounded-lg hover:bg-primary/5">Contact</a>
       </div>
 
       <!-- Actions -->
       <div class="relative z-20 flex items-center gap-5">
-        <a href="tel:888-851-2272" class="flex items-center gap-2 text-[13px] text-foreground/70 hover:text-primary transition-all duration-300 font-medium">
-          <span class="tracking-tight">888-851-2272</span>
+        <a href="tel:<?php echo esc_attr(SITE_PHONE_LINK); ?>" class="flex items-center gap-2 text-[13px] text-foreground/70 hover:text-primary transition-all duration-300 font-medium">
+          <span class="tracking-tight"><?php echo esc_html(SITE_PHONE); ?></span>
         </a>
         <a href="#contact" class="px-5 py-2.5 rounded-xl bg-primary text-white text-[13px] font-medium hover:bg-primary/90 transition-all duration-200 hover:shadow-lg hover:shadow-primary/25">
           Free Consultation

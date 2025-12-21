@@ -36,7 +36,7 @@
             <div class="slice-3 w-1/3 h-full bg-background"></div>
           </div>
           <img 
-            src="https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?w=800&h=600&fit=crop" 
+            src="https://www.elderattorneylongisland.com/wp-content/uploads/2023/02/AdobeStock_261051798-1-1199x800.jpg" 
             alt="Grandmother and granddaughter sharing a joyful moment together" 
             class="w-full h-full object-cover"
             loading="lazy"

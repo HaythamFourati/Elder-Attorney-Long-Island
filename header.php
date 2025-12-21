@@ -33,8 +33,8 @@
       "name": "Elder Attorney Long Island - Lisa Singer, PLLC",
       "description": "Elder Law Attorney serving Long Island, NY. Expert legal services in Medicaid planning, estate planning, long-term care, and asset protection.",
       "url": "<?php echo home_url(); ?>",
-      "telephone": "888-851-2272",
-      "email": "info@elderattorneylongisland.com",
+      "telephone": "<?php echo esc_js(SITE_PHONE_LINK); ?>",
+      "email": "<?php echo esc_js(SITE_EMAIL); ?>",
       "foundingDate": "1994",
       "priceRange": "$$",
       "address": [
