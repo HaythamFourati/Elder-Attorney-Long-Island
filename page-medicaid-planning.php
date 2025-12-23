@@ -12,7 +12,7 @@ get_header(); ?>
   <!-- Hero Section -->
   <section class="relative pt-8 pb-16 lg:pt-12 lg:pb-24 overflow-hidden">
     <div class="max-w-6xl mx-auto px-4 relative z-10">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         <div class="service-hero-content">
           <div class="flex items-center gap-6 mb-6">
             <a href="<?php echo home_url(); ?>/#practice-areas" class="inline-flex items-center gap-2 text-[13px] text-primary font-medium hover:text-primary/80 transition-colors">
@@ -46,8 +46,8 @@ get_header(); ?>
         </div>
         
         <!-- Hero Video -->
-        <div class="relative hidden lg:block">
-          <div class="service-hero-image relative rounded-3xl overflow-hidden aspect-video shadow-2xl">
+        <div class="relative mt-8 lg:mt-0">
+          <div class="service-hero-image relative rounded-2xl lg:rounded-3xl overflow-hidden aspect-video shadow-2xl">
             <iframe 
               src="https://www.youtube.com/embed/pueE1Lx8q6M?rel=0" 
               title="Medicaid Planning Video"
@@ -64,9 +64,9 @@ get_header(); ?>
   </section>
 
   <!-- Main Content -->
-  <section class="py-24">
+  <section class="py-16 lg:py-24">
     <div class="max-w-6xl mx-auto px-4">
-      <div class="grid lg:grid-cols-3 gap-12">
+      <div class="grid lg:grid-cols-3 gap-8 lg:gap-12">
         <!-- Main Content -->
         <div class="lg:col-span-2 service-content">
           <h2 class="text-2xl md:text-3xl font-semibold tracking-tight text-foreground mb-6">

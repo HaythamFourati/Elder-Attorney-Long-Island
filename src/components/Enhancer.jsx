@@ -259,9 +259,15 @@ function Enhancer() {
           "#practice-areas .max-w-xl", "#practice-areas > div > p", ".practice-card",
           "#testimonials .max-w-xl", ".testimonial-card",
           ".showcase-text-1 > *", ".showcase-text-2 > *",
-          ".showcase-image-1 .image-slices > div", ".showcase-image-2 .image-slices-2 > div",
           "#contact > div > *"
-        ].join(', '), { opacity: 1, y: 0, x: 0, scale: 1, scaleX: 0, scaleY: 0 })
+        ].join(', '), { opacity: 1, y: 0, x: 0, scale: 1 })
+
+        // Hide image slices on mobile to reveal images
+        gsap.set([
+          ".showcase-image-1 .image-slices > div", 
+          ".showcase-image-2 .image-slices-2 > div",
+          ".service-hero-image .hero-image-slices > div"
+        ].join(', '), { scaleY: 0 })
 
         // Fix: set cards visible properly
         gsap.set([".practice-card", ".testimonial-card", ".blog-card"], { scale: 1, opacity: 1 })
