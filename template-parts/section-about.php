@@ -22,7 +22,7 @@
           When we take the time to listen to our elders, we can learn lessons that will stay with us for a lifetime. Family caregiving becomes part of the formula for being our best selves.
         </p>
         <a href="#contact" class="inline-flex items-center justify-center px-6 py-3.5 rounded-xl border border-border text-foreground/80 text-[15px] font-medium hover:bg-muted/50 hover:border-primary/20 transition-all duration-200 group">
-          Schedule a Free Consultation
+          Schedule a Complimentary Consultation
           <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
       </div>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Elder Law Attorney Lisa Singer serving Long Island, NY since 1994. Expert legal services in Medicaid planning, estate planning, long-term care, and asset protection. Free consultation available.">
+    <meta name="description" content="Elder Law Attorney Lisa Singer serving Long Island, NY since 1994. Expert legal services in Medicaid planning, estate planning, long-term care, and asset protection. Complimentary consultation available.">
     <meta name="keywords" content="elder law attorney, Long Island, Melville NY, Medicaid planning, estate planning, long-term care, asset protection, probate, elder care lawyer">
     <meta name="author" content="Lisa Singer, PLLC">
     

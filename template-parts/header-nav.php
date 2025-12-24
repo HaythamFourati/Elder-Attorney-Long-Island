@@ -62,7 +62,7 @@
           <span class="tracking-tight"><?php echo esc_html(SITE_PHONE); ?></span>
         </a>
         <a href="#contact" class="px-5 py-2.5 rounded-xl bg-primary text-white text-[13px] font-medium hover:bg-primary/90 transition-all duration-200 hover:shadow-lg hover:shadow-primary/25">
-          Free Consultation
+          Complimentary Consultation
         </a>
       </div>
     </div>
@@ -122,7 +122,7 @@
             <?php echo esc_html(SITE_PHONE); ?>
           </a>
           <a href="#contact" class="flex items-center justify-center gap-2 px-4 py-3 text-[14px] text-white font-medium rounded-xl bg-primary hover:bg-primary/90 transition-colors">
-            Free Consultation
+            Complimentary Consultation
           </a>
         </div>
       </div>

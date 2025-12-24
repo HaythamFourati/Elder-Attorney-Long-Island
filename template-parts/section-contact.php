@@ -14,7 +14,7 @@
           Get In Touch
         </span>
         <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-foreground mb-6">
-          Schedule Your Free Consultation
+          Schedule Your Complimentary Consultation
         </h2>
         <p class="text-muted-foreground text-[15px] leading-relaxed mb-8">
           Facing elder care legal challenges? Our experienced Elder Law Attorney can help. Provide a brief description of your case, and let's discuss your path to legal clarity.
@@ -129,7 +129,7 @@
           </div>
 
           <div class="cf7-submit-wrap">
-            <button type="submit" class="cf7-submit">Request Free Consultation</button>
+            <button type="submit" class="cf7-submit">Request Complimentary Consultation</button>
           </div>
 
           <p class="cf7-disclaimer">By submitting, you agree to our privacy policy. We'll never share your information.</p>

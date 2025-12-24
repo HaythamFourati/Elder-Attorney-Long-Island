@@ -26,7 +26,7 @@
   </div>
 
   <div class="cf7-submit-wrap">
-    [submit class:cf7-submit "Request Free Consultation"]
+    [submit class:cf7-submit "Request Complimentary Consultation"]
   </div>
 
   <p class="cf7-disclaimer">By submitting, you agree to our privacy policy. We'll never share your information.</p>

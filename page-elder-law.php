@@ -35,7 +35,7 @@ get_header(); ?>
           
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="#contact" class="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-primary text-white text-[15px] font-medium hover:bg-primary/90 transition-all duration-200 hover:shadow-lg hover:shadow-primary/20">
-              Schedule Free Consultation
+              Complimentary Consultation
               <svg class="w-4 h-4 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
             <a href="tel:<?php echo esc_attr(SITE_PHONE_LINK); ?>" class="inline-flex items-center justify-center px-6 py-3.5 rounded-xl border border-border text-foreground/80 text-[15px] font-medium hover:bg-muted/50 hover:border-primary/20 transition-all duration-200">
@@ -159,7 +159,7 @@ get_header(); ?>
           <div class="sticky top-8 space-y-6">
             <!-- CTA Card -->
             <div class="bg-primary rounded-2xl p-6 text-white">
-              <h3 class="text-lg font-semibold mb-3">Free Consultation</h3>
+              <h3 class="text-lg font-semibold mb-3">Complimentary Consultation</h3>
               <p class="text-white/80 text-[14px] mb-5">
                 Get personalized guidance on your elder law needs. We're here to help protect your family's future.
               </p>
