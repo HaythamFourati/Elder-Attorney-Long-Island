@@ -6,13 +6,13 @@
  */
 define('SITE_PHONE', '(888) 851-2272');
 define('SITE_PHONE_LINK', '888-851-2272');
-define('SITE_EMAIL', 'lisa@elderattorneylongisland.com');
+define('SITE_EMAIL', 'lisa@lisasingerlaw.com');
 
 define('SITE_OFFICE_MELVILLE_NAME', 'Melville Office');
 define('SITE_OFFICE_MELVILLE_ADDRESS', '445 Broadhollow Rd, Suite C1 18, Melville, NY 11747');
 
-define('SITE_OFFICE_QUEENS_NAME', 'Queens Office');
-define('SITE_OFFICE_QUEENS_ADDRESS', '247-67 Jericho Tpke, Bellerose, NY 11426');
+define('SITE_OFFICE_QUEENS_NAME', 'Garden City Office');
+define('SITE_OFFICE_QUEENS_ADDRESS', '401 Franklin Ave., Ste. 312 Garden City, NY 11530');
 
 function boilerplate_load_assets() {
   wp_enqueue_script('ourmainjs', get_theme_file_uri('/build/index.js'), array('wp-element', 'react-jsx-runtime'), '1.0', true);

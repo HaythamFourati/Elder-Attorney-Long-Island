@@ -115,17 +115,8 @@ get_header(); ?>
                 <svg class="w-3.5 h-3.5 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
               <div>
-                <p class="font-medium text-foreground">National Academy of Elder Law Attorneys (NAELA)</p>
-                <p class="text-[14px] text-muted-foreground">Active member</p>
-              </div>
-            </li>
-            <li class="flex items-start gap-3">
-              <div class="w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg class="w-3.5 h-3.5 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <div>
                 <p class="font-medium text-foreground">New York State Bar Association</p>
-                <p class="text-[14px] text-muted-foreground">Elder Law and Trusts & Estates Sections</p>
+                <p class="text-[14px] text-muted-foreground">Elder Law, Trusts & Estates and Medicaid Sections</p>
               </div>
             </li>
           </ul>
