@@ -11,46 +11,21 @@
       <a href="<?php echo home_url(); ?>" class="relative z-20 flex items-center gap-3">
         <!-- Modern logo mark using primary color -->
         <div class="w-9 h-9 rounded-xl bg-primary flex items-center justify-center transition-all duration-300">
-          <span class="text-white font-semibold text-sm tracking-tight">EA</span>
+          <span class="text-white font-semibold text-sm tracking-tight"><?php echo esc_html(SITE_LOGO_INITIALS); ?></span>
         </div>
         <div class="flex flex-col">
-          <span class="font-semibold text-[15px] leading-tight text-foreground tracking-tight transition-colors duration-300">Elder Attorney</span>
-          <span class="text-[11px] leading-tight text-muted-foreground tracking-wide uppercase transition-colors duration-300">Long Island</span>
+          <span class="font-semibold text-[15px] leading-tight text-foreground tracking-tight transition-colors duration-300"><?php echo esc_html(SITE_NAME); ?></span>
+          <?php if (SITE_TAGLINE): ?>
+          <span class="text-[11px] leading-tight text-muted-foreground tracking-wide uppercase transition-colors duration-300"><?php echo esc_html(SITE_TAGLINE); ?></span>
+          <?php endif; ?>
         </div>
       </a>
 
       <!-- Navigation Items -->
+      <!-- TODO: Customize navigation links for your project -->
       <div class="flex flex-row items-center gap-1">
-        <div class="relative group">
-          <a href="#practice-areas" class="relative px-4 py-2 text-[13px] text-foreground/70 hover:text-primary font-medium flex items-center gap-1.5 transition-colors duration-200 rounded-lg hover:bg-primary/5">
-            Services
-            <svg class="w-3.5 h-3.5 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-            </svg>
-          </a>
-          <!-- Dropdown -->
-          <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-white rounded-xl shadow-xl shadow-primary/10 border border-border py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-            <a href="<?php echo home_url('/long-term-care'); ?>" class="flex items-center gap-3 px-4 py-2.5 text-[13px] text-foreground/70 hover:bg-primary/5 hover:text-primary transition-colors">
-              Long-Term Care
-            </a>
-            <a href="<?php echo home_url('/elder-law'); ?>" class="flex items-center gap-3 px-4 py-2.5 text-[13px] text-foreground/70 hover:bg-primary/5 hover:text-primary transition-colors">
-              Elder Law
-            </a>
-            <a href="<?php echo home_url('/estate-planning'); ?>" class="flex items-center gap-3 px-4 py-2.5 text-[13px] text-foreground/70 hover:bg-primary/5 hover:text-primary transition-colors">
-              Estate Planning
-            </a>
-            <a href="<?php echo home_url('/medicaid-planning'); ?>" class="flex items-center gap-3 px-4 py-2.5 text-[13px] text-foreground/70 hover:bg-primary/5 hover:text-primary transition-colors">
-              Medicaid Planning
-            </a>
-            <a href="<?php echo home_url('/asset-protection'); ?>" class="flex items-center gap-3 px-4 py-2.5 text-[13px] text-foreground/70 hover:bg-primary/5 hover:text-primary transition-colors">
-              Asset Protection
-            </a>
-            <a href="<?php echo home_url('/probate'); ?>" class="flex items-center gap-3 px-4 py-2.5 text-[13px] text-foreground/70 hover:bg-primary/5 hover:text-primary transition-colors">
-              Probate
-            </a>
-          </div>
-        </div>
-        <a href="<?php echo home_url('/about'); ?>" class="relative px-4 py-2 text-[13px] text-foreground/70 hover:text-primary font-medium transition-colors duration-200 rounded-lg hover:bg-primary/5">About</a>
+        <a href="<?php echo home_url('/#services'); ?>" class="relative px-4 py-2 text-[13px] text-foreground/70 hover:text-primary font-medium transition-colors duration-200 rounded-lg hover:bg-primary/5">Services</a>
+        <a href="<?php echo home_url('/#about'); ?>" class="relative px-4 py-2 text-[13px] text-foreground/70 hover:text-primary font-medium transition-colors duration-200 rounded-lg hover:bg-primary/5">About</a>
         <a href="<?php echo home_url('/blog'); ?>" class="relative px-4 py-2 text-[13px] text-foreground/70 hover:text-primary font-medium transition-colors duration-200 rounded-lg hover:bg-primary/5">Blog</a>
         <a href="<?php echo home_url('/#testimonials'); ?>" class="relative px-4 py-2 text-[13px] text-foreground/70 hover:text-primary font-medium transition-colors duration-200 rounded-lg hover:bg-primary/5">Reviews</a>
         <a href="#contact" class="relative px-4 py-2 text-[13px] text-foreground/70 hover:text-primary font-medium transition-colors duration-200 rounded-lg hover:bg-primary/5">Contact</a>
@@ -62,7 +37,7 @@
           <span class="tracking-tight"><?php echo esc_html(SITE_PHONE); ?></span>
         </a>
         <a href="#contact" class="px-5 py-2.5 rounded-xl bg-primary text-white text-[13px] font-medium hover:bg-primary/90 transition-all duration-200 hover:shadow-lg hover:shadow-primary/25">
-          Complimentary Consultation
+          Get Started
         </a>
       </div>
     </div>
@@ -72,9 +47,9 @@
       <div class="flex w-full flex-row items-center justify-between">
         <a href="<?php echo home_url(); ?>" class="flex items-center gap-2.5">
           <div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-            <span class="text-white font-semibold text-xs tracking-tight">EA</span>
+            <span class="text-white font-semibold text-xs tracking-tight"><?php echo esc_html(SITE_LOGO_INITIALS); ?></span>
           </div>
-          <span class="font-semibold text-sm text-foreground tracking-tight">Elder Attorney</span>
+          <span class="font-semibold text-sm text-foreground tracking-tight"><?php echo esc_html(SITE_NAME); ?></span>
         </a>
         <button id="mobile-menu-toggle" class="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-primary/5 transition-colors" aria-label="Toggle menu">
           <svg id="mobile-menu-icon-open" class="w-5 h-5 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -89,25 +64,8 @@
       <!-- Mobile Menu Panel -->
       <div id="mobile-menu-panel" class="hidden w-full pt-4 pb-2">
         <div class="flex flex-col gap-1">
-          <!-- Services Accordion -->
-          <div class="mobile-accordion">
-            <button id="mobile-services-toggle" class="w-full flex items-center justify-between px-3 py-2.5 text-[14px] text-foreground font-medium rounded-lg hover:bg-primary/5 transition-colors">
-              Services
-              <svg class="w-4 h-4 text-muted-foreground transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-              </svg>
-            </button>
-            <div id="mobile-services-menu" class="hidden pl-3 mt-1 space-y-1">
-              <a href="<?php echo home_url('/long-term-care'); ?>" class="block px-3 py-2 text-[13px] text-foreground/70 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors">Long-Term Care</a>
-              <a href="<?php echo home_url('/elder-law'); ?>" class="block px-3 py-2 text-[13px] text-foreground/70 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors">Elder Law</a>
-              <a href="<?php echo home_url('/estate-planning'); ?>" class="block px-3 py-2 text-[13px] text-foreground/70 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors">Estate Planning</a>
-              <a href="<?php echo home_url('/medicaid-planning'); ?>" class="block px-3 py-2 text-[13px] text-foreground/70 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors">Medicaid Planning</a>
-              <a href="<?php echo home_url('/asset-protection'); ?>" class="block px-3 py-2 text-[13px] text-foreground/70 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors">Asset Protection</a>
-              <a href="<?php echo home_url('/probate'); ?>" class="block px-3 py-2 text-[13px] text-foreground/70 hover:text-primary hover:bg-primary/5 rounded-lg transition-colors">Probate</a>
-            </div>
-          </div>
-          
-          <a href="<?php echo home_url('/about'); ?>" class="px-3 py-2.5 text-[14px] text-foreground font-medium rounded-lg hover:bg-primary/5 transition-colors">About</a>
+          <a href="<?php echo home_url('/#services'); ?>" class="px-3 py-2.5 text-[14px] text-foreground font-medium rounded-lg hover:bg-primary/5 transition-colors">Services</a>
+          <a href="<?php echo home_url('/#about'); ?>" class="px-3 py-2.5 text-[14px] text-foreground font-medium rounded-lg hover:bg-primary/5 transition-colors">About</a>
           <a href="<?php echo home_url('/blog'); ?>" class="px-3 py-2.5 text-[14px] text-foreground font-medium rounded-lg hover:bg-primary/5 transition-colors">Blog</a>
           <a href="<?php echo home_url('/#testimonials'); ?>" class="px-3 py-2.5 text-[14px] text-foreground font-medium rounded-lg hover:bg-primary/5 transition-colors">Reviews</a>
           <a href="#contact" class="px-3 py-2.5 text-[14px] text-foreground font-medium rounded-lg hover:bg-primary/5 transition-colors">Contact</a>
@@ -122,7 +80,7 @@
             <?php echo esc_html(SITE_PHONE); ?>
           </a>
           <a href="#contact" class="flex items-center justify-center gap-2 px-4 py-3 text-[14px] text-white font-medium rounded-xl bg-primary hover:bg-primary/90 transition-colors">
-            Complimentary Consultation
+            Get Started
           </a>
         </div>
       </div>

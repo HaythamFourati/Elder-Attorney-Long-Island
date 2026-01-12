@@ -1,12 +1,17 @@
 /*
-  Theme Name: SHADCN WP THEME
-  Author: Haytham Fourati
-  Author URI: https://github.com/haythamfourati
-  Description: A modern WordPress theme with Tailwind CSS and React
+  Theme Name: GSAP WP Boilerplate
+  Author: Your Name
+  Author URI: https://yourwebsite.com
+  Description: A modern, high-performance WordPress theme starter with Tailwind CSS v4, React enhancements, and GSAP animations. Perfect starting point for professional WordPress projects.
   Version: 1.0.0
-  Text Domain: shadcn-wp-theme
+  Text Domain: gsap-wp-boilerplate
+  License: GPL-2.0-or-later
+  License URI: https://www.gnu.org/licenses/gpl-2.0.html
+  Tags: custom-colors, custom-logo, featured-images, full-width-template, one-column, two-columns, blog
 */
 
-/* This file only exists for the sake of WordPress recognizing our theme / theme name etc... */
-
-/* We do not include CSS here and also WordPress will not load this file on the front-end */
+/*
+  This file only exists for WordPress to recognize the theme.
+  All styles are compiled from src/index.css to build/index.css via Tailwind CLI.
+  Do not add CSS here - it won't be loaded on the front-end.
+*/

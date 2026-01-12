@@ -120,7 +120,7 @@ get_header(); ?>
             <p class="text-[12px] text-muted-foreground uppercase tracking-wider mb-1">Written by</p>
             <h3 class="text-[17px] font-semibold text-foreground mb-2"><?php the_author(); ?></h3>
             <p class="text-[14px] text-muted-foreground leading-relaxed">
-              <?php echo get_the_author_meta('description') ?: 'Elder law attorney dedicated to helping Long Island families protect their loved ones and legacy.'; ?>
+              <?php echo get_the_author_meta('description') ?: 'Professional dedicated to helping clients achieve their goals with expertise and care.'; ?>
             </p>
           </div>
         </div>

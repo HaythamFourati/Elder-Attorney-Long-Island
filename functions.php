@@ -1,18 +1,42 @@
 <?php
 
 /**
- * Global Site Contact Information
- * Change these values once to update site-wide
+ * ============================================
+ * SITE CONFIGURATION - UPDATE THESE FOR YOUR PROJECT
+ * ============================================
+ * Change these values once to update site-wide.
+ * All template parts reference these constants.
  */
-define('SITE_PHONE', '(888) 851-2272');
-define('SITE_PHONE_LINK', '888-851-2272');
-define('SITE_EMAIL', 'lisa@lisasingerlaw.com');
 
-define('SITE_OFFICE_MELVILLE_NAME', 'Melville Office');
-define('SITE_OFFICE_MELVILLE_ADDRESS', '445 Broadhollow Rd, Suite C1 18, Melville, NY 11747');
+// Brand
+define('SITE_NAME', 'Your Brand');
+define('SITE_TAGLINE', 'Your Tagline');
+define('SITE_LOGO_INITIALS', 'YB'); // 2-3 letter abbreviation for logo mark
 
-define('SITE_OFFICE_QUEENS_NAME', 'Garden City Office');
-define('SITE_OFFICE_QUEENS_ADDRESS', '401 Franklin Ave., Ste. 312 Garden City, NY 11530');
+// Contact
+define('SITE_PHONE', '(555) 123-4567');
+define('SITE_PHONE_LINK', '555-123-4567'); // No parentheses or spaces for tel: links
+define('SITE_EMAIL', 'hello@yourdomain.com');
+
+// Primary Office
+define('SITE_OFFICE_PRIMARY_NAME', 'Main Office');
+define('SITE_OFFICE_PRIMARY_ADDRESS', '123 Main Street, Suite 100, City, ST 12345');
+
+// Secondary Office (optional - leave empty if not needed)
+define('SITE_OFFICE_SECONDARY_NAME', '');
+define('SITE_OFFICE_SECONDARY_ADDRESS', '');
+
+// Social Links (leave empty to hide)
+define('SITE_SOCIAL_FACEBOOK', '');
+define('SITE_SOCIAL_LINKEDIN', '');
+define('SITE_SOCIAL_TWITTER', '');
+define('SITE_SOCIAL_INSTAGRAM', '');
+
+// Trust Indicators (customize for your industry)
+define('SITE_YEARS_EXPERIENCE', '10+');
+define('SITE_CLIENTS_HELPED', '500+');
+define('SITE_RATING', '5.0');
+define('SITE_RATING_SOURCE', 'Google');
 
 function boilerplate_load_assets() {
   wp_enqueue_script('ourmainjs', get_theme_file_uri('/build/index.js'), array('wp-element', 'react-jsx-runtime'), '1.0', true);
@@ -29,9 +53,11 @@ function boilerplate_add_support() {
 add_action('after_setup_theme', 'boilerplate_add_support');
 
 // Preload hero image for LCP optimization
+// Update the URL below with your actual hero image
 function boilerplate_preload_hero_image() {
   if (is_front_page()) {
-    echo '<link rel="preload" as="image" href="https://images.unsplash.com/photo-1758686253708-f0e21317d2aa?q=80&w=2232&auto=format&fit=crop" fetchpriority="high">';
+    // TODO: Replace with your hero image URL
+    echo '<link rel="preload" as="image" href="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop" fetchpriority="high">';
   }
 }
 add_action('wp_head', 'boilerplate_preload_hero_image', 1);

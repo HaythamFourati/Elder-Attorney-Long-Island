@@ -1,11 +1,11 @@
 {
-  "name": "shadcn-wp-theme",
+  "name": "gsap-wp-boilerplate",
   "version": "1.0.0",
-  "description": "",
+  "description": "A modern WordPress theme starter with Tailwind CSS v4, React, and GSAP animations",
   "main": "index.js",
   "scripts": {
     "preview": "npm-run-all --parallel sync wpstart tailwindwatch",
-    "sync": "browser-sync start -p 'shadcntest.local' --files '**/*.php' 'build/*.js' 'build/*.css'",
+    "sync": "browser-sync start -p 'your-site.local' --files '**/*.php' 'build/*.js' 'build/*.css'",
     "buildwp": "wp-scripts build",
     "build": "npm-run-all --sequential buildwp tailwindbuild",
     "wpstart": "wp-scripts start",
@@ -18,14 +18,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@tailwindcss/cli": "^4.0.6",
-    "@tailwindcss/typography": "^0.5.16",
-    "@wordpress/scripts": "^30.10.0",
-    "browser-sync": "^3.0.3",
-    "npm-run-all": "^4.1.5",
-    "tailwindcss": "^4.0.6"
+    "@tailwindcss/cli": "4.1.18",
+    "@tailwindcss/typography": "0.5.19",
+    "@wordpress/scripts": "31.2.0",
+    "browser-sync": "3.0.4",
+    "npm-run-all": "4.1.5",
+    "tailwindcss": "4.1.18"
   },
   "dependencies": {
-    "gsap": "^3.14.2"
+    "gsap": "3.14.2"
   }
 }

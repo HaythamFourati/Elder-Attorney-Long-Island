@@ -28,11 +28,12 @@ function Enhancer() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [navbarScrolled, setNavbarScrolled] = useState(false)
 
+  // TODO: Update these reviews for your project
   const googleReviews = [
-    { name: "Maria S.", text: "Lisa Singer is amazing! She helped my family navigate Medicaid planning with such care and expertise." },
-    { name: "Robert K.", text: "Highly recommend! Professional, knowledgeable, and truly cares about her clients." },
-    { name: "Susan T.", text: "The best elder law attorney on Long Island. Made a difficult process so much easier." },
-    { name: "James P.", text: "Exceptional service. Lisa took the time to explain everything clearly." },
+    { name: "Sarah J.", text: "Exceptional service from start to finish. The team was professional and delivered exactly what we needed." },
+    { name: "Michael C.", text: "Highly recommend! Professional, knowledgeable, and truly cares about their clients." },
+    { name: "Emily R.", text: "Outstanding experience. They made a complex process simple and stress-free." },
+    { name: "David T.", text: "Exceptional service. They took the time to explain everything clearly." },
   ]
 
   // Reviews carousel auto-rotation
@@ -68,7 +69,7 @@ function Enhancer() {
 
       const header = document.querySelector('#site-header')
       const navbar = document.querySelector('#navbar-root > div:first-child')
-      const phoneLink = document.querySelector('#navbar-root a[href="tel:888-851-2272"]')
+      const phoneLink = document.querySelector('#navbar-root a[href^="tel:"]')
 
       if (header) {
         header.style.paddingTop = scrolled ? '0.5rem' : '1rem'

@@ -1,7 +1,9 @@
 <?php
 /**
  * Contact Form Section - Clean 2025 Modern Design
- * Placeholder form - will be replaced with Contact Form 7
+ * ============================================
+ * Includes Contact Form 7 integration with fallback form.
+ * TODO: Update CF7 shortcode ID after creating form in WP Admin.
  */
 ?>
 <section id="contact" class="py-16 lg:py-24 bg-primary/[0.03]">
@@ -13,11 +15,13 @@
           <span class="w-8 h-px bg-primary/40 mr-3"></span>
           Get In Touch
         </span>
+        <!-- TODO: Update headline for your project -->
         <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-foreground mb-6">
-          Schedule Your Complimentary Consultation
+          Let's Start a Conversation
         </h2>
+        <!-- TODO: Update description for your project -->
         <p class="text-muted-foreground text-[15px] leading-relaxed mb-8">
-          Facing elder care legal challenges? Our experienced Elder Law Attorney can help. Provide a brief description of your case, and let's discuss your path to legal clarity.
+          Have a question or ready to get started? Fill out the form and we'll get back to you within 24 hours. We're here to help.
         </p>
 
         <!-- Contact Details -->
@@ -42,6 +46,7 @@
             </div>
           </a>
 
+          <?php if (SITE_OFFICE_PRIMARY_ADDRESS): ?>
           <div class="flex items-start gap-4">
             <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
               <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -50,16 +55,19 @@
               <p class="text-[13px] text-muted-foreground mb-2">Visit Us</p>
               <div class="space-y-3">
                 <div>
-                  <p class="text-[14px] font-medium text-foreground"><?php echo esc_html(SITE_OFFICE_MELVILLE_NAME); ?></p>
-                  <p class="text-[13px] text-muted-foreground"><?php echo esc_html(SITE_OFFICE_MELVILLE_ADDRESS); ?></p>
+                  <?php if (SITE_OFFICE_PRIMARY_NAME): ?><p class="text-[14px] font-medium text-foreground"><?php echo esc_html(SITE_OFFICE_PRIMARY_NAME); ?></p><?php endif; ?>
+                  <p class="text-[13px] text-muted-foreground"><?php echo esc_html(SITE_OFFICE_PRIMARY_ADDRESS); ?></p>
                 </div>
+                <?php if (SITE_OFFICE_SECONDARY_ADDRESS): ?>
                 <div>
-                  <p class="text-[14px] font-medium text-foreground"><?php echo esc_html(SITE_OFFICE_QUEENS_NAME); ?></p>
-                  <p class="text-[13px] text-muted-foreground"><?php echo esc_html(SITE_OFFICE_QUEENS_ADDRESS); ?></p>
+                  <?php if (SITE_OFFICE_SECONDARY_NAME): ?><p class="text-[14px] font-medium text-foreground"><?php echo esc_html(SITE_OFFICE_SECONDARY_NAME); ?></p><?php endif; ?>
+                  <p class="text-[13px] text-muted-foreground"><?php echo esc_html(SITE_OFFICE_SECONDARY_ADDRESS); ?></p>
                 </div>
+                <?php endif; ?>
               </div>
             </div>
           </div>
+          <?php endif; ?>
         </div>
 
         <!-- Trust Badge -->
@@ -68,8 +76,8 @@
             <svg class="w-5 h-5 fill-amber-400 text-amber-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
           <div>
-            <p class="text-[14px] font-semibold text-foreground">5.0 Rating on Google</p>
-            <p class="text-[12px] text-muted-foreground">Trusted by Long Island families since 1994</p>
+            <p class="text-[14px] font-semibold text-foreground"><?php echo esc_html(SITE_RATING); ?> Rating on <?php echo esc_html(SITE_RATING_SOURCE); ?></p>
+            <p class="text-[12px] text-muted-foreground">Trusted by <?php echo esc_html(SITE_CLIENTS_HELPED); ?> clients</p>
           </div>
         </div>
       </div>
@@ -80,13 +88,16 @@
         
         <?php 
         // Contact Form 7 Integration
-        // Replace FORM_ID with your actual CF7 form ID after creating it in WP Admin
-        // Example: echo do_shortcode('[contact-form-7 id="123" title="Contact Page Form"]');
+        // ============================================
+        // After installing CF7 plugin and creating a form:
+        // 1. Go to Contact > Contact Forms in WP Admin
+        // 2. Copy the shortcode (e.g., [contact-form-7 id="abc123" title="Contact"])
+        // 3. Replace the shortcode below with your actual form shortcode
         
         if (shortcode_exists('contact-form-7')) {
           // CF7 is installed - use the shortcode
-          // IMPORTANT: Update the ID below with your actual form ID
-          echo do_shortcode('[contact-form-7 id="90fe23e" title="Contact form 1"]');
+          // TODO: Update this shortcode with your actual CF7 form ID
+          echo do_shortcode('[contact-form-7 id="YOUR_FORM_ID" title="Contact Form"]');
         } else {
           // Fallback form when CF7 is not installed
         ?>
@@ -109,16 +120,15 @@
             <input type="email" name="email" placeholder="john@example.com" class="cf7-input" required />
           </div>
 
+          <!-- TODO: Update service options for your project -->
           <div class="cf7-field">
             <label class="cf7-label">Service Needed</label>
             <select name="service" class="cf7-select">
               <option value="">Select a service...</option>
-              <option value="elder-law">Elder Law</option>
-              <option value="estate-planning">Estate Planning</option>
-              <option value="medicaid-planning">Medicaid Planning</option>
-              <option value="long-term-care">Long-Term Care Planning</option>
-              <option value="asset-protection">Asset Protection</option>
-              <option value="probate">Probate & Administration</option>
+              <option value="service-1">Service One</option>
+              <option value="service-2">Service Two</option>
+              <option value="service-3">Service Three</option>
+              <option value="service-4">Service Four</option>
               <option value="other">Other</option>
             </select>
           </div>
@@ -129,7 +139,7 @@
           </div>
 
           <div class="cf7-submit-wrap">
-            <button type="submit" class="cf7-submit">Request Complimentary Consultation</button>
+            <button type="submit" class="cf7-submit">Send Message</button>
           </div>
 
           <p class="cf7-disclaimer">By submitting, you agree to our privacy policy. We'll never share your information.</p>

@@ -1,212 +1,375 @@
-# Elder Attorney Long Island - WordPress Theme
+# GSAP WP Boilerplate
 
-A modern, high-performance WordPress theme built for Elder Attorney Long Island. Features a clean 2025 aesthetic with smooth animations, optimized for Core Web Vitals.
+A modern, high-performance WordPress theme boilerplate with Tailwind CSS v4, React enhancements, and GSAP animations. The perfect starting point for professional WordPress projects.
 
-## Tech Stack
+## Features
 
-| Technology | Purpose |
-|------------|---------|
-| **PHP** | WordPress template files (server-rendered for SEO) |
-| **React** | Client-side enhancements via `Enhancer.jsx` |
-| **Tailwind CSS v4** | Utility-first styling with custom design tokens |
-| **GSAP + ScrollTrigger** | Scroll-linked animations (desktop only) |
-| **@wordpress/scripts** | JS bundling (webpack under the hood) |
-| **BrowserSync** | Live reload during development |
+- **Tailwind CSS v4** - Latest utility-first CSS with custom design tokens
+- **React Enhancements** - Client-side interactivity via `Enhancer.jsx`
+- **GSAP + ScrollTrigger** - Smooth scroll-linked animations (desktop only)
+- **Mobile-First** - Responsive design with mobile performance optimizations
+- **Accessibility** - Respects `prefers-reduced-motion`, visible focus states
+- **Core Web Vitals Optimized** - Fast LCP, minimal CLS, deferred JS
+- **Contact Form 7 Ready** - Pre-styled CF7 form integration
+- **BrowserSync** - Live reload during development
+
+---
+
+## Quick Start
+
+### 1. Install the Theme
+
+Copy the theme folder to your WordPress installation:
+
+```bash
+cp -r gsap-wp-boilerplate /path/to/wordpress/wp-content/themes/
+```
+
+### 2. Install Dependencies
+
+```bash
+cd wp-content/themes/gsap-wp-boilerplate
+npm install
+```
+
+### 3. Configure Your Site
+
+Edit `functions.php` and update the site configuration constants:
+
+```php
+// Brand
+define('SITE_NAME', 'Your Brand');
+define('SITE_TAGLINE', 'Your Tagline');
+define('SITE_LOGO_INITIALS', 'YB');
+
+// Contact
+define('SITE_PHONE', '(555) 123-4567');
+define('SITE_PHONE_LINK', '555-123-4567');
+define('SITE_EMAIL', 'hello@yourdomain.com');
+
+// Office(s)
+define('SITE_OFFICE_PRIMARY_NAME', 'Main Office');
+define('SITE_OFFICE_PRIMARY_ADDRESS', '123 Main St, City, ST 12345');
+
+// Social Links (leave empty to hide)
+define('SITE_SOCIAL_FACEBOOK', 'https://facebook.com/yourpage');
+define('SITE_SOCIAL_LINKEDIN', '');
+define('SITE_SOCIAL_TWITTER', '');
+define('SITE_SOCIAL_INSTAGRAM', '');
+
+// Trust Indicators
+define('SITE_YEARS_EXPERIENCE', '10+');
+define('SITE_CLIENTS_HELPED', '500+');
+define('SITE_RATING', '5.0');
+define('SITE_RATING_SOURCE', 'Google');
+```
+
+### 4. Update BrowserSync Domain
+
+Edit `package.json` and replace `your-site.local` with your local WordPress domain:
+
+```json
+"sync": "browser-sync start -p 'your-site.local' --files '**/*.php' 'build/*.js' 'build/*.css'"
+```
+
+### 5. Build & Activate
+
+```bash
+# Build for production
+npm run build
+
+# Or start development mode
+npm run preview
+```
+
+Then activate the theme in WordPress Admin → Appearance → Themes.
+
+---
 
 ## Project Structure
 
 ```
-shadcn-wp-theme/
-├── build/                    # Compiled assets (git-ignored)
+gsap-wp-boilerplate/
+├── build/                    # Compiled assets (generated)
 │   ├── index.js              # Bundled React/GSAP
 │   └── index.css             # Compiled Tailwind
 ├── src/
 │   ├── index.js              # React entry point
 │   ├── index.css             # Tailwind entry (tokens + layers)
 │   └── components/
-│       └── Enhancer.jsx      # All React enhancements
+│       └── Enhancer.jsx      # React enhancements & GSAP animations
 ├── template-parts/           # Reusable PHP partials
 │   ├── header-nav.php        # Site navigation
 │   ├── section-hero.php      # Homepage hero
-│   ├── section-practice-areas.php
-│   ├── section-about.php
-│   ├── section-testimonials.php
-│   ├── section-contact.php
-│   └── footer-site.php
+│   ├── section-practice-areas.php  # Services grid
+│   ├── section-about.php     # About section
+│   ├── section-testimonials.php    # Testimonials grid
+│   ├── section-contact.php   # Contact form
+│   └── footer-site.php       # Site footer
 ├── front-page.php            # Homepage template
-├── page-about.php            # About Lisa Singer
-├── page-blog.php             # Blog listing (Template Name: Blog)
-├── page-long-term-care.php   # Service page
-├── page-elder-law.php        # Service page
-├── page-estate-planning.php  # Service page
-├── page-medicaid-planning.php# Service page
-├── page-asset-protection.php # Service page
-├── page-probate.php          # Service page
+├── page-blog.php             # Blog listing template
 ├── single.php                # Single blog post
 ├── archive.php               # Category/tag archives
 ├── index.php                 # Fallback template
-├── functions.php             # Theme setup & enqueues
+├── header.php                # Document head + SEO
+├── footer.php                # Document footer
+├── functions.php             # Theme setup & configuration
 ├── style.css                 # Theme metadata (required by WP)
 └── package.json              # NPM scripts & dependencies
 ```
 
-## Getting Started
+---
 
-### Prerequisites
-
-- Node.js 18+
-- Local WordPress environment (Local by Flywheel, MAMP, etc.)
-- Theme installed in `wp-content/themes/`
-
-### Installation
-
-```bash
-# Navigate to theme directory
-cd wp-content/themes/shadcn-wp-theme
-
-# Install dependencies
-npm install
-
-# Build for production
-npm run build
-```
-
-### Development
-
-```bash
-# Start development with live reload
-npm run preview
-```
-
-This runs three processes in parallel:
-1. **BrowserSync** - Proxies `shadcntest.local` with live reload
-2. **wp-scripts start** - Watches and rebuilds JS
-3. **Tailwind CLI** - Watches and rebuilds CSS
-
-### NPM Scripts
+## NPM Scripts
 
 | Command | Description |
 |---------|-------------|
-| `npm run preview` | Full dev environment with BrowserSync |
+| `npm run preview` | Full dev environment with BrowserSync live reload |
 | `npm run start` | JS + CSS watch (no BrowserSync) |
 | `npm run build` | Production build (minified) |
 | `npm run buildwp` | Build JS only |
 | `npm run tailwindbuild` | Build CSS only |
+| `npm run tailwindwatch` | Watch CSS only |
 
-## Design System
+---
 
-### Colors (defined in `src/index.css`)
+## Customization Guide
+
+### Updating Content
+
+Most content is in the `template-parts/` folder. Each file has `TODO` comments marking what to customize:
+
+| File | What to Update |
+|------|----------------|
+| `section-hero.php` | Headline, subheadline, hero image |
+| `section-practice-areas.php` | Services array (icons, titles, descriptions) |
+| `section-about.php` | About copy, team/founder info, images |
+| `section-testimonials.php` | Testimonials array |
+| `section-contact.php` | Form fields, CF7 shortcode ID |
+| `header-nav.php` | Navigation links |
+| `footer-site.php` | Footer links, tagline |
+
+### Changing Colors
+
+Edit the design tokens in `src/index.css`:
 
 ```css
---color-primary: hsl(224 76% 32%);      /* Deep sapphire blue */
---color-accent: hsl(18 76% 52%);        /* Copper/terracotta */
---color-background: hsl(220 20% 97%);   /* Light gray */
---color-foreground: hsl(222 47% 11%);   /* Near black */
---color-muted-foreground: hsl(220 9% 46%);
+@theme {
+  /* Primary brand color */
+  --color-primary: hsl(224 76% 32%);
+  
+  /* Accent color */
+  --color-accent: hsl(18 76% 52%);
+  
+  /* Background */
+  --color-background: hsl(220 20% 97%);
+  
+  /* Text colors */
+  --color-foreground: hsl(222 47% 11%);
+  --color-muted-foreground: hsl(220 9% 46%);
+}
 ```
 
-### Typography
+After editing, rebuild CSS:
 
-- **Headings**: System font stack, semibold, tight tracking
-- **Body**: 15px base, relaxed line height
-- **Small text**: 13px for labels, 12px for meta
+```bash
+npm run tailwindbuild
+```
 
-### Spacing Rhythm
+### Adding Service Icons
 
-- Section padding: `py-24` (6rem)
-- Card padding: `p-6` (1.5rem)
-- Max content width: `max-w-6xl` (72rem)
+Icons are from [Lucide](https://lucide.dev). Copy the SVG code directly into the services array in `section-practice-areas.php`:
 
-## Performance Optimizations
+```php
+$services = [
+  [
+    'icon' => '<svg class="w-5 h-5" ...>...</svg>',
+    'title' => 'Your Service',
+    'description' => 'Service description.',
+    'url' => '/your-service-page'
+  ],
+  // ...
+];
+```
 
-### Mobile (< 1024px)
-- ❌ ScrollTrigger animations disabled
-- ✅ Simple fade-in animations only
-- ✅ All content visible immediately
-- ✅ Native browser scroll (no JS overhead)
+### Contact Form 7 Setup
 
-### Desktop
-- ✅ Native browser scroll (lightweight, universal)
-- ✅ ScrollTrigger.batch() for card animations
-- ✅ One-time triggers (not continuous scrub)
-- ✅ Deferred JS loading
+1. Install the Contact Form 7 plugin
+2. Create a new form in Contact → Contact Forms
+3. Copy the form shortcode
+4. Update `section-contact.php` with your shortcode:
 
-### Accessibility
-- ✅ `prefers-reduced-motion` respected
-- ✅ All animations disabled for users who prefer reduced motion
-- ✅ Visible focus states
-- ✅ Semantic HTML structure
+```php
+echo do_shortcode('[contact-form-7 id="abc123" title="Contact Form"]');
+```
 
-### Core Web Vitals (measured)
-- **LCP**: 0.49s (Excellent)
-- **CLS**: 0.02 (Excellent)
-- **Scripting**: 244ms total
+The theme includes pre-styled CF7 classes. Use this form template:
 
-## Page Templates
+```html
+<div class="cf7-custom-form">
+  <div class="cf7-row cf7-two-col">
+    <div class="cf7-field">
+      <label class="cf7-label">Full Name</label>
+      [text* your-name class:cf7-input placeholder "John Smith"]
+    </div>
+    <div class="cf7-field">
+      <label class="cf7-label">Phone</label>
+      [tel* your-phone class:cf7-input placeholder "(555) 123-4567"]
+    </div>
+  </div>
+  <div class="cf7-field">
+    <label class="cf7-label">Email</label>
+    [email* your-email class:cf7-input placeholder "john@example.com"]
+  </div>
+  <div class="cf7-field">
+    <label class="cf7-label">Message</label>
+    [textarea* your-message class:cf7-textarea rows:4 placeholder "How can we help?"]
+  </div>
+  <div class="cf7-submit-wrap">
+    [submit class:cf7-submit "Send Message"]
+  </div>
+</div>
+```
 
-### Homepage (`front-page.php`)
-Automatically used for the site's front page. Includes:
-- Hero with split text animation
-- Practice areas grid
-- About section with image reveal
-- Testimonials carousel
-- Contact form
-- Footer
+---
 
-### Service Pages (`page-{service}.php`)
-Create a WordPress page with matching slug:
-- `/long-term-care`
-- `/elder-law`
-- `/estate-planning`
-- `/medicaid-planning`
-- `/asset-protection`
-- `/probate`
+## GSAP Animations
 
-### About Page (`page-about.php`)
-Create a page with slug `/about` or select "About" template.
+All animations are in `src/components/Enhancer.jsx`. The theme includes:
 
-### Blog (`page-blog.php`)
-Create a page with slug `/blog` or select "Blog" template.
-
-## Animations
-
-### On-Load (runs once)
-- Header slides in from top
-- Hero text character-by-character reveal (desktop)
+### On-Load Animations
+- Header slide-in
+- Hero text character reveal (desktop)
 - Hero image slice reveal
 - Hero badge pop-in
 
-### On-Scroll (desktop only)
+### Scroll Animations (Desktop Only)
 - Section headers fade up
 - Cards batch animate with stagger
 - Image slice reveals
 - Content fade-in
 
-## Adding New Pages
+### Adding New Animations
 
-1. Create PHP template: `page-{slug}.php`
-2. Add Template Name comment if needed:
-   ```php
-   <?php
-   /**
-    * Template Name: My Custom Page
-    */
-   ```
-3. Include header-nav and footer-site partials
-4. Add `#react-enhancer` div before `get_footer()`
-5. Add any new animation selectors to `Enhancer.jsx`
+1. Add a CSS class to your element (e.g., `.my-animated-element`)
+2. Add the animation in `Enhancer.jsx`:
 
-## Contact Information
-
-- **Phone**: 888-851-2272
-- **Email**: info@elderattorneylongisland.com
-- **Offices**: Melville & Queens, NY
-
-## Credits
-
-- **Theme Development**: [Local Vocal Marketing](https://localvocalmarketing.com/)
-- **Client**: Elder Attorney Long Island / Lisa Singer, PLLC
+```jsx
+// Inside the useEffect with GSAP context
+ScrollTrigger.create({
+  trigger: '.my-animated-element',
+  start: 'top 80%',
+  once: true,
+  onEnter: () => {
+    gsap.fromTo('.my-animated-element',
+      { y: 40, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.6, ease: "power2.out" }
+    )
+  }
+})
+```
 
 ---
 
-© 2025 Elder Attorney Long Island. All rights reserved.
+## Creating New Pages
+
+### Option 1: Simple Page (uses default template)
+
+Create a page in WordPress Admin. It will use `index.php` or `page.php`.
+
+### Option 2: Custom Page Template
+
+1. Create a new file: `page-{slug}.php` or `template-{name}.php`
+2. Add the template header:
+
+```php
+<?php
+/**
+ * Template Name: My Custom Page
+ */
+
+get_header(); ?>
+
+<div class="min-h-screen bg-background text-foreground">
+  <?php get_template_part('template-parts/header-nav'); ?>
+  
+  <!-- Your content here -->
+  
+  <?php get_template_part('template-parts/section-contact'); ?>
+  <?php get_template_part('template-parts/footer-site'); ?>
+</div>
+
+<!-- React Enhancement Root (required for animations) -->
+<div id="react-enhancer"></div>
+
+<?php get_footer();
+```
+
+---
+
+## Performance
+
+### Mobile Optimizations
+- ScrollTrigger animations disabled on mobile (< 1024px)
+- Simple fade-in animations only
+- All content visible immediately
+- Native browser scroll
+
+### Desktop Optimizations
+- `ScrollTrigger.batch()` for efficient card animations
+- One-time triggers (not continuous scrub)
+- Deferred JS loading
+- Hero image preloading
+
+### Accessibility
+- `prefers-reduced-motion` fully respected
+- Visible focus states on all interactive elements
+- Semantic HTML structure
+- ARIA labels where needed
+
+---
+
+## Tech Stack
+
+| Technology | Version | Purpose |
+|------------|---------|---------|
+| PHP | 7.4+ | WordPress templates |
+| Tailwind CSS | v4.0 | Utility-first styling |
+| React | 18+ | Client-side enhancements |
+| GSAP | 3.14+ | Scroll animations |
+| @wordpress/scripts | 30+ | JS bundling (webpack) |
+| BrowserSync | 3.0 | Live reload |
+
+---
+
+## Checklist for New Projects
+
+- [ ] Update `functions.php` site configuration
+- [ ] Update `package.json` BrowserSync domain
+- [ ] Customize `section-hero.php` headline and image
+- [ ] Update `section-practice-areas.php` services
+- [ ] Update `section-about.php` content and images
+- [ ] Replace `section-testimonials.php` testimonials
+- [ ] Configure Contact Form 7 and update shortcode
+- [ ] Update `header.php` SEO meta tags
+- [ ] Update `footer-site.php` links and tagline
+- [ ] Update `Enhancer.jsx` reviews carousel (if used)
+- [ ] Replace `screenshot.png` with your design
+- [ ] Update `style.css` theme name and author
+- [ ] Run `npm run build` for production
+
+---
+
+## License
+
+GPL-2.0-or-later
+
+---
+
+## Credits
+
+Built with modern WordPress development best practices. Uses:
+- [Tailwind CSS](https://tailwindcss.com)
+- [GSAP](https://greensock.com/gsap/)
+- [Lucide Icons](https://lucide.dev)
+- [@wordpress/scripts](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/)
